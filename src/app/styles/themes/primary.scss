@@ -1,0 +1,10 @@
+.app.primary {
+  --bg-color: #171719;
+  --inverted-bg-color: #F6F6F6;
+  --gradient: radial-gradient(50% 50% at 50% 50%, #1F2261 0%, rgba(31, 34, 97, 0) 100%), var(--bg-color);
+  --accent: #1F2261;
+  --text-color: #F6F6F6;
+  --inverted-text-color: #171719;
+  --aditional-text-color: #808080;
+  --hint-color: #A1A1A1;
+}

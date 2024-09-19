@@ -1,0 +1,48 @@
+@import "normalize.css";
+@import "variables/global.scss";
+@import "themes/primary.scss";
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+
+  @media screen and (max-width: 1440px) {
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: calc(100vw / 768 * 10);
+  }
+}
+
+.app {
+  font: var(--font-m);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient);
+  height: 100vh;
+  margin: 0;
+}

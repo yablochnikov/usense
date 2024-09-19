@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+
+  .SwapCurrenciesButton {
+    width: 6.6rem;
+    height: 6.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  span {
+    z-index: 1;
+    background-color: var(--accent);
+    position: absolute;
+    height: 1px;
+    width: 400%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

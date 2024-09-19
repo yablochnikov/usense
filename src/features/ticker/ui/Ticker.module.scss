@@ -1,0 +1,39 @@
+.ticker {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+
+.ticker__slider {
+  display: flex;
+  align-items: center;
+  animation: ticker 40s linear infinite;
+}
+
+.ticker__slider_primary,
+.ticker__slider_secondary {
+  display: flex;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ticker__slider_secondary {
+  margin-left: 100%;
+}
+
+.ticker__item {
+  display: inline-block;
+  margin-right: 5rem;
+}
+
+@keyframes ticker {
+  0% {
+	transform: translateX(0);
+  }
+  100% {
+	transform: translateX(-50%);
+  }
+}

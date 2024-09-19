@@ -1,0 +1,35 @@
+.CustomSelect {
+  display: flex;
+  gap: 1.4rem;
+
+  .wrapper {
+	display: flex;
+	gap: 2.4rem;
+  }
+
+  .select {
+	height: 6rem;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #26278D;
+	font-size: 3.2rem;
+	font-weight: 500;
+  }
+
+  .flag {
+	width: 6rem;
+	height: 6rem;
+  }
+
+  .amount {
+	display: flex;
+	align-items: center;
+	gap: 1.4rem;
+  }
+
+  .input {
+	width: 20rem;
+	height: 6rem;
+  }
+}
