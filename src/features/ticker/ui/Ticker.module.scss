@@ -10,7 +10,7 @@
 .ticker__slider {
   display: flex;
   align-items: center;
-  animation: ticker 40s linear infinite;
+  justify-content: center;
 }
 
 .ticker__slider_primary,
@@ -27,13 +27,4 @@
 .ticker__item {
   display: inline-block;
   margin-right: 5rem;
-}
-
-@keyframes ticker {
-  0% {
-	transform: translateX(0);
-  }
-  100% {
-	transform: translateX(-50%);
-  }
 }

@@ -54,7 +54,6 @@ const currencyConverterSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-
         builder
             .addCase(fetchConversionRates.fulfilled, (state, action: PayloadAction<{ rateAB: number; rateBA: number }>) => {
                 state.conversionRateAB = action.payload.rateAB;
@@ -67,7 +66,7 @@ const currencyConverterSlice = createSlice({
                 state.error = action.error.message || 'Failed to fetch conversion rates';
             })
             .addCase(fetchCurrencies.fulfilled, (state,  action: PayloadAction<string[]>) => {
-                state.currenciesList = action.payload;
+                state.currenciesList = action.payload.filter(currency => currency !== 'RUB');
             })
             .addCase(fetchCurrencies.rejected, (state, action) => {
                 state.error = action.error.message || 'Failed to fetch currencies';
@@ -80,8 +79,6 @@ export const {
     setCurrencyA,
     setAmountB,
     setCurrencyB,
-    setConversionRates,
-    setError,
     swapCurrencies
 } = currencyConverterSlice.actions;
 

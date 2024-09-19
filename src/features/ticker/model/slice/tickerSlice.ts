@@ -7,11 +7,12 @@ interface TickerState {
     loading: boolean;
 }
 
+const MAIN_CURRENCIES = ['USD', 'EUR'];
+
 const initialState: TickerState = {
     rates: {},
     loading: false,
 };
-
 
 const tickerSlice = createSlice({
     name: 'ticker',
@@ -27,9 +28,10 @@ const tickerSlice = createSlice({
                 state.loading = true;
             })
             .addCase(fetchRates.fulfilled, (state, action: PayloadAction<CurrencyRates['rates']>) => {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-expect-error
-                state.rates = action.payload;
+                const filteredRates = Object.fromEntries(
+                    Object.entries(action.payload).filter(([currency]) => MAIN_CURRENCIES.includes(currency))
+                );
+                state.rates = filteredRates;
                 state.loading = false;
             })
             .addCase(fetchRates.rejected, (state) => {

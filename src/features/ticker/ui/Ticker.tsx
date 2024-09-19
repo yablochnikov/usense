@@ -23,7 +23,7 @@ export const Ticker: FC<TickerProps> = ({ className }) => {
 
     const repeatedText = Object.entries(rates).map(([currency, rate]) => (
         <span key={currency} className={cls.ticker__item}>
-      {currency} {rate}
+      {currency} {(1/rate).toFixed(3)}
     </span>
     ));
 
@@ -31,7 +31,6 @@ export const Ticker: FC<TickerProps> = ({ className }) => {
         <div className={`${cls.ticker} ${className}`}>
             <div className={cls.ticker__slider}>
                 <div className={cls.ticker__slider_primary}>{repeatedText}</div>
-                <div className={cls.ticker__slider_secondary}>{repeatedText}</div>
             </div>
         </div>
     );
